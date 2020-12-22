@@ -23,6 +23,8 @@ Cost effective to set up.
 // USAGE>>>
 python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/<dataset-name>
 
+// Next Train a Machine learning model using the Datasets
+
 
 
 
