@@ -1,4 +1,4 @@
-# secure-bot
+# Smart-Home-Security-using-Telegram-Chatbot
 Smart Home Security using telegram chatbot using the combination of face recognition and motion detection.
 
 Objective:
