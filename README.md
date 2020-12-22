@@ -20,6 +20,9 @@ Cost effective to set up.
 
 // First Create the dataset using build_face_dataset.py //
 
+// USAGE>>>
+python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/<dataset-name>
+
 
 
 
