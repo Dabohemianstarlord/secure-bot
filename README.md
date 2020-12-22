@@ -18,6 +18,10 @@ Our system uses motion detection and face recognition to filter out false result
 Surveillance footage is stored in telegram server free of cost.
 Cost effective to set up.
 
+DOWNLOAD openface_nn4.small2.v1.t7 FACE RECOGNITION FROM THE WEB.
+
+EXTRACT THE .ZIP FILES.
+
 CREATE FACE DATASET USING build_face_dataset.py
 
 // USAGE>>>
