@@ -25,6 +25,7 @@ python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --out
   
 // Extract embeddings from face datasets created earlier.
 
+// USAGE>>>
 python extract_embeddings.py --dataset dataset \
 	--embeddings output/embeddings.pickle \
 	--detector face_detection_model \
@@ -32,6 +33,7 @@ python extract_embeddings.py --dataset dataset \
 
 // Next Train a Machine learning model using the Datasets
 
+// USAGE>>>
 python train_model.py --embeddings output/embeddings.pickle \
 	--recognizer output/recognizer.pickle \
 	--le output/le.pickle
