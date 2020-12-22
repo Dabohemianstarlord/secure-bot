@@ -22,9 +22,19 @@ Cost effective to set up.
 
 // USAGE>>>
 python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/<dataset-name>
+  
+// Extract embeddings from face datasets created earlier.
+
+python extract_embeddings.py --dataset dataset \
+	--embeddings output/embeddings.pickle \
+	--detector face_detection_model \
+	--embedding-model openface_nn4.small2.v1.t7
 
 // Next Train a Machine learning model using the Datasets
 
+python train_model.py --embeddings output/embeddings.pickle \
+	--recognizer output/recognizer.pickle \
+	--le output/le.pickle
 
 
 
@@ -177,7 +187,8 @@ python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --out
 
 
 
-Most of the code is used from https://www.pyimagesearch.com/.
+
+Most of the code is used from https://www.pyimagesearch.com/, Thanks to Adrian from PyImageSearch!
 We combined two separate algorithms and added our own to make this system work.
 
 
