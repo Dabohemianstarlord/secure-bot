@@ -18,6 +18,9 @@ Our system uses motion detection and face recognition to filter out false result
 Surveillance footage is stored in telegram server free of cost.
 Cost effective to set up.
 
+// First Create the dataset using build_face_dataset.py //
+
+
 
 
 
