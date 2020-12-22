@@ -1,7 +1,7 @@
 # Smart-Home-Security-using-Telegram-Chatbot
 Using the combination of face recognition and motion detection.
 
-// Objective //
+OBJECTIVE
 
 An affordable home security system using Telegram chatbot.
 Uses Face recognition algorithm along with Motion detection to give correct intrusion alerts
@@ -9,7 +9,7 @@ Sends out intrusion alert with picture when unknown person enters frame.
 User can request surveillance footage through commands.
 The system alerts user when it can’t detect a face but there is movements.
 
-// Problem Statement //
+PROBLEM STATEMENT
 
 Smart home security is very expensive to set up.
 Existing system uses motion detection alone which produces false alerts.
@@ -18,12 +18,12 @@ Our system uses motion detection and face recognition to filter out false result
 Surveillance footage is stored in telegram server free of cost.
 Cost effective to set up.
 
-// First Create the dataset using build_face_dataset.py //
+CREATE FACE DATASET USING build_face_dataset.py
 
 // USAGE>>>
 python build_face_dataset.py --cascade haarcascade_frontalface_default.xml --output dataset/<dataset-name>
   
-// Extract embeddings from face datasets created earlier.
+EXTRACT EMBEDDINGS FROM FACE DATASETS.
 
 // USAGE>>>
 python extract_embeddings.py --dataset dataset \
@@ -31,7 +31,7 @@ python extract_embeddings.py --dataset dataset \
 	--detector face_detection_model \
 	--embedding-model openface_nn4.small2.v1.t7
 
-// Next Train a Machine learning model using the Datasets
+TRAIN A MACHINE LEARNING MODEL USING THE FACE DATASETS
 
 // USAGE>>>
 python train_model.py --embeddings output/embeddings.pickle \
@@ -39,14 +39,14 @@ python train_model.py --embeddings output/embeddings.pickle \
 	--le output/le.pickle
 	
 
-// RUN THE HOME SECURITY SYSTEM
+RUN THE HOME SECURITY SYSTEM
 
 //USAGE>>>python recognize.py --detector face_detection_model \
 	--embedding-model openface_nn4.small2.v1.t7 \
 	--recognizer output/recognizer.pickle \
 	--le output/le.pickle \
 	
-// Algorithm – Motion Detection
+ALGORITHM - MOTION DETECTION
 
 Input the video frames
 
@@ -81,7 +81,7 @@ If contour area is larger than minimum area, draw bounding box surrounding the f
 		cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2) 
 		
 		
-// Algorithm- Face Recognition
+ALGORITHM - FACE RECOGNITION
 
 
 Gather the face dataset of the users.
@@ -122,9 +122,9 @@ Use confidence to filter out weak detections.
 		
 		(fH, fW) = face.shape[:2] 
 		
-// Recording Video
+RECORDING VIDEO FOOTAGE
 
-       footage =cv2.VideoWriter('footage.avi',cv2.VideoWriter_fourcc(*'XVID'), 30, (640, 480)) 
+       footage = cv2.VideoWriter('footage.avi',cv2.VideoWriter_fourcc(*'XVID'), 30, (640, 480)) 
 
 footage is file to where the video is written.
 
@@ -138,7 +138,7 @@ XVID is codec used for encoding the video.
 
 	footage.write(frame)  
 	
-// Telegram notifications
+TELEGRAM NOTIFICATIONS
 
 When movement is detected, the system also looks for the face if it is unknown image is captured and send to user.
 
@@ -178,7 +178,7 @@ Recording a 5 second clip:
 			
 			telegram_bot.sendDocument(chat_id, document=open('filename.avi’, ‘rb’)) 
 			
-// Result and Conclusion
+RESULT AND CONCLUSION
 
 The incorporation of motion detection and face recognition has helped filter out false alerts to an extend.
 Telegram being open source and free allows for storage of video files and images sent to users on their servers.
@@ -188,7 +188,7 @@ Face recognition only works when someone is facing the camera.
 Face recognition working side to side with motion detection helps to detect intruders even if face can’t be detected. 
 
 
-// Future Scope
+FUTURE SCOPE
 
 Object detection can be implemented completely using TensorFlow.
 TensorFlow can detect a person as a whole and not by just facial features.
